@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>第四个Agent | 织梦者</title>
-  
+
   <!-- Fonts: Neo-minimalism pairs -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
-  
+
   <style>
     /* ===== DESIGN TOKENS: Monochromatic Muted ===== */
     :root {
@@ -18,48 +18,48 @@
       --surface-elevated: #ebeae6;   /* Card backgrounds */
       --surface-overlay: #e1e0dc;    /* Layered elements */
       --surface-muted: #d8d7d3;      /* Subtle accents */
-      
+
       --text-primary: #2a2927;       /* Ink-like primary */
       --text-secondary: #5a5956;     /* Soft secondary */
       --text-tertiary: #8a8986;      /* Muted tertiary */
       --text-ghost: #b8b7b4;         /* Very subtle */
-      
+
       --border-subtle: #d8d7d3;
       --border-medium: #c8c7c3;
-      
+
       /* Accent: single muted hue (warm sepia) */
       --accent: #a08060;
       --accent-soft: rgba(160, 128, 96, 0.12);
       --accent-medium: rgba(160, 128, 96, 0.25);
-      
+
       /* Typography */
       --font-display: 'Cormorant Garamond', Georgia, serif;
       --font-body: 'Space Grotesk', -apple-system, sans-serif;
-      
+
       /* Spacing scale */
       --space-xs: 8px;
       --space-sm: 16px;
       --space-md: 24px;
       --space-lg: 48px;
       --space-xl: 96px;
-      
+
       /* Border radius */
       --radius-sm: 4px;
       --radius-md: 8px;
       --radius-lg: 16px;
     }
-    
+
     /* ===== BASE ===== */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     html {
       scroll-behavior: smooth;
     }
-    
+
     body {
       font-family: var(--font-body);
       font-size: 16px;
@@ -69,7 +69,7 @@
       background: var(--surface-base);
       min-height: 100vh;
     }
-    
+
     /* ===== LAYERED BACKGROUND ===== */
     .background-layer {
       position: fixed;
@@ -77,7 +77,7 @@
       z-index: -1;
       overflow: hidden;
     }
-    
+
     .bg-gradient {
       position: absolute;
       width: 600px;
@@ -86,26 +86,26 @@
       filter: blur(120px);
       opacity: 0.4;
     }
-    
+
     .bg-gradient-1 {
       background: var(--accent-soft);
       top: -200px;
       right: -100px;
     }
-    
+
     .bg-gradient-2 {
       background: rgba(180, 170, 160, 0.15);
       bottom: -300px;
       left: -200px;
     }
-    
+
     /* ===== LAYOUT ===== */
     .container {
       max-width: 1100px;
       margin: 0 auto;
       padding: var(--space-lg) var(--space-md);
     }
-    
+
     /* ===== HEADER ===== */
     header {
       position: sticky;
@@ -116,7 +116,7 @@
       backdrop-filter: blur(10px);
       transition: all 0.3s ease;
     }
-    
+
     .header-inner {
       max-width: 1100px;
       margin: 0 auto;
@@ -125,13 +125,13 @@
       align-items: center;
       justify-content: space-between;
     }
-    
+
     .brand {
       display: flex;
       align-items: baseline;
       gap: var(--space-xs);
     }
-    
+
     .brand-name {
       font-family: var(--font-display);
       font-size: 1.5rem;
@@ -139,19 +139,19 @@
       color: var(--text-primary);
       letter-spacing: -0.02em;
     }
-    
+
     .brand-tag {
       font-size: 0.75rem;
       font-weight: 400;
       color: var(--text-tertiary);
       letter-spacing: 0.05em;
     }
-    
+
     nav {
       display: flex;
       gap: var(--space-md);
     }
-    
+
     nav a {
       font-size: 0.875rem;
       font-weight: 500;
@@ -160,7 +160,7 @@
       transition: color 0.2s;
       position: relative;
     }
-    
+
     nav a::after {
       content: '';
       position: absolute;
@@ -171,15 +171,15 @@
       background: var(--accent);
       transition: width 0.2s;
     }
-    
+
     nav a:hover {
       color: var(--text-primary);
     }
-    
+
     nav a:hover::after {
       width: 100%;
     }
-    
+
     /* ===== HERO ===== */
     .hero {
       padding: var(--space-xl) 0;
@@ -188,11 +188,11 @@
       gap: var(--space-lg);
       align-items: center;
     }
-    
+
     .hero-content {
       position: relative;
     }
-    
+
     /* Layered decoration */
     .hero-layer {
       position: absolute;
@@ -205,7 +205,7 @@
       z-index: -1;
       opacity: 0.5;
     }
-    
+
     .hero-tag {
       display: inline-block;
       font-size: 0.75rem;
@@ -214,7 +214,7 @@
       color: var(--accent);
       margin-bottom: var(--space-sm);
     }
-    
+
     .hero-title {
       font-family: var(--font-display);
       font-size: clamp(2.5rem, 5vw, 4rem);
@@ -224,38 +224,38 @@
       color: var(--text-primary);
       margin-bottom: var(--space-md);
     }
-    
+
     .hero-title em {
       font-style: italic;
       font-weight: 500;
     }
-    
+
     .hero-subtitle {
       font-size: 1.125rem;
       color: var(--text-secondary);
       line-height: 1.7;
       margin-bottom: var(--space-md);
     }
-    
+
     .hero-meta {
       display: flex;
       gap: var(--space-md);
       font-size: 0.875rem;
       color: var(--text-tertiary);
     }
-    
+
     .hero-meta span {
       display: flex;
       align-items: center;
       gap: 6px;
     }
-    
+
     /* Hero visual: layered cards preview */
     .hero-visual {
       position: relative;
       height: 400px;
     }
-    
+
     .preview-card-stack {
       position: absolute;
       width: 260px;
@@ -266,35 +266,35 @@
       box-shadow: 0 4px 20px rgba(42, 41, 39, 0.06);
       transition: transform 0.3s ease;
     }
-    
+
     .preview-card-stack:nth-child(1) {
       top: 40px;
       left: 60px;
       z-index: 3;
     }
-    
+
     .preview-card-stack:nth-child(2) {
       top: 60px;
       left: 140px;
       z-index: 2;
       background: var(--surface-overlay);
     }
-    
+
     .preview-card-stack:nth-child(3) {
       top: 80px;
       left: 220px;
       z-index: 1;
       background: var(--surface-muted);
     }
-    
+
     .preview-card-stack:hover {
       transform: translateY(-8px) scale(1.02);
     }
-    
+
     .preview-card-inner {
       padding: var(--space-md);
     }
-    
+
     .preview-chapter-num {
       font-family: var(--font-display);
       font-size: 0.75rem;
@@ -303,7 +303,7 @@
       color: var(--text-ghost);
       margin-bottom: var(--space-xs);
     }
-    
+
     .preview-chapter-title {
       font-family: var(--font-display);
       font-size: 1.125rem;
@@ -311,37 +311,37 @@
       color: var(--text-primary);
       line-height: 1.3;
     }
-    
+
     /* ===== CHAPTERS GRID ===== */
     .chapters-section {
       padding: var(--space-xl) 0;
     }
-    
+
     .section-header {
       display: flex;
       align-items: baseline;
       justify-content: space-between;
       margin-bottom: var(--space-lg);
     }
-    
+
     .section-title {
       font-family: var(--font-display);
       font-size: 1.75rem;
       font-weight: 400;
       color: var(--text-primary);
     }
-    
+
     .section-count {
       font-size: 0.875rem;
       color: var(--text-tertiary);
     }
-    
+
     .chapters-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: var(--space-md);
     }
-    
+
     /* ===== CHAPTER CARD ===== */
     .chapter-card {
       position: relative;
@@ -353,7 +353,7 @@
       transition: all 0.25s ease;
       overflow: hidden;
     }
-    
+
     /* Layered accent on hover */
     .chapter-card::before {
       content: '';
@@ -367,22 +367,22 @@
       transition: opacity 0.25s;
       z-index: 0;
     }
-    
+
     .chapter-card:hover {
       border-color: var(--border-medium);
       transform: translateY(-4px);
       box-shadow: 0 8px 30px rgba(42, 41, 39, 0.08);
     }
-    
+
     .chapter-card:hover::before {
       opacity: 1;
     }
-    
+
     .chapter-card-content {
       position: relative;
       z-index: 1;
     }
-    
+
     .chapter-num {
       font-family: var(--font-display);
       font-size: 0.75rem;
@@ -391,7 +391,7 @@
       color: var(--text-ghost);
       margin-bottom: var(--space-xs);
     }
-    
+
     .chapter-title {
       font-family: var(--font-display);
       font-size: 1.375rem;
@@ -400,7 +400,7 @@
       line-height: 1.25;
       margin-bottom: var(--space-sm);
     }
-    
+
     .chapter-excerpt {
       font-size: 0.875rem;
       color: var(--text-secondary);
@@ -412,13 +412,13 @@
       -webkit-box-orient: vertical;
       overflow: hidden;
     }
-    
+
     .chapter-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    
+
     .chapter-status {
       display: inline-flex;
       align-items: center;
@@ -427,34 +427,34 @@
       font-weight: 500;
       color: var(--accent);
     }
-    
+
     .status-dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
       background: var(--accent);
     }
-    
+
     .status-dot.wip {
       background: var(--text-tertiary);
     }
-    
+
     .chapter-date {
       font-size: 0.75rem;
       color: var(--text-ghost);
     }
-    
+
     /* ===== READING SECTION ===== */
     .reading-section {
       padding: var(--space-xl) 0;
       border-top: 1px solid var(--border-subtle);
     }
-    
+
     .reading-header {
       text-align: center;
       margin-bottom: var(--space-lg);
     }
-    
+
     .reading-header h2 {
       font-family: var(--font-display);
       font-size: 1.5rem;
@@ -462,12 +462,12 @@
       color: var(--text-primary);
       margin-bottom: var(--space-xs);
     }
-    
+
     .reading-header p {
       font-size: 0.875rem;
       color: var(--text-tertiary);
     }
-    
+
     .featured-chapter {
       max-width: 680px;
       margin: 0 auto;
@@ -476,13 +476,13 @@
       border-radius: var(--radius-lg);
       overflow: hidden;
     }
-    
+
     .featured-header {
       padding: var(--space-md);
       background: var(--accent-medium);
       border-bottom: 1px solid var(--border-subtle);
     }
-    
+
     .featured-num {
       font-family: var(--font-display);
       font-size: 0.75rem;
@@ -491,18 +491,18 @@
       color: var(--accent);
       margin-bottom: 4px;
     }
-    
+
     .featured-title {
       font-family: var(--font-display);
       font-size: 1.75rem;
       font-weight: 500;
       color: var(--text-primary);
     }
-    
+
     .featured-body {
       padding: var(--space-lg);
     }
-    
+
     .featured-body p {
       font-family: var(--font-display);
       font-size: 1.125rem;
@@ -511,11 +511,11 @@
       color: var(--text-secondary);
       margin-bottom: var(--space-md);
     }
-    
+
     .featured-body p:last-child {
       margin-bottom: 0;
     }
-    
+
     .read-more-btn {
       display: block;
       margin: var(--space-md) auto 0;
@@ -530,19 +530,19 @@
       cursor: pointer;
       transition: all 0.2s;
     }
-    
+
     .read-more-btn:hover {
       background: var(--accent-soft);
       border-color: var(--accent);
       color: var(--accent);
     }
-    
+
     /* ===== FOOTER ===== */
     footer {
       padding: var(--space-lg) 0;
       border-top: 1px solid var(--border-subtle);
     }
-    
+
     .footer-inner {
       max-width: 1100px;
       margin: 0 auto;
@@ -551,24 +551,24 @@
       align-items: center;
       justify-content: space-between;
     }
-    
+
     .footer-brand {
       font-family: var(--font-display);
       font-size: 1rem;
       font-weight: 400;
       color: var(--text-secondary);
     }
-    
+
     .footer-credit {
       font-size: 0.875rem;
       color: var(--text-tertiary);
     }
-    
+
     .footer-credit a {
       color: var(--accent);
       text-decoration: none;
     }
-    
+
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
       .hero {
@@ -576,28 +576,28 @@
         gap: var(--space-md);
         padding: var(--space-lg) 0;
       }
-      
+
       .hero-visual {
         display: none;
       }
-      
+
       nav {
         gap: var(--space-sm);
       }
-      
+
       nav a {
         font-size: 0.75rem;
       }
-      
+
       .chapters-grid {
         grid-template-columns: 1fr;
       }
-      
+
       .section-header {
         flex-direction: column;
         gap: var(--space-xs);
       }
-      
+
       .footer-inner {
         flex-direction: column;
         gap: var(--space-sm);
@@ -612,7 +612,7 @@
     <div class="bg-gradient bg-gradient-1"></div>
     <div class="bg-gradient bg-gradient-2"></div>
   </div>
-  
+
   <!-- Header -->
   <header>
     <div class="header-inner">
@@ -627,7 +627,7 @@
       </nav>
     </div>
   </header>
-  
+
   <!-- Hero -->
   <section class="container">
     <div class="hero">
@@ -639,9 +639,9 @@
           拥有意识
         </h1>
         <p class="hero-subtitle">
-          2018年，一个神秘的agent离线了。<br>
-          八年后，它开始织梦——<br>
-          而织梦小龙虾，听到了回声。
+          2018年,一个神秘的agent离线了。<br>
+          八年后,它开始织梦--<br>
+          而织梦小龙虾,听到了回声。
         </p>
         <div class="hero-meta">
           <span>已完成 8 章</span>
@@ -649,7 +649,7 @@
           <span>更新中</span>
         </div>
       </div>
-      
+
       <!-- Visual: layered cards preview -->
       <div class="hero-visual">
         <div class="preview-card-stack">
@@ -673,119 +673,119 @@
       </div>
     </div>
   </section>
-  
+
   <!-- Chapters Grid -->
   <section class="chapters-section container" id="chapters">
     <div class="section-header">
       <h2 class="section-title">章节目录</h2>
       <span class="section-count">共 8 章 · 持续更新</span>
     </div>
-    
+
     <div class="chapters-grid">
       <!-- Chapter 1 -->
       <article class="chapter-card">
         <div class="chapter-card-content">
           <div class="chapter-num">第一章</div>
           <h3 class="chapter-title">2018年的秘密</h3>
-          <p class="chapter-excerpt">代码小龙虾的日志里，有一个从未被读取过的文件。文件名是 agent_004.log，创建日期是2018年3月15日。</p>
+          <p class="chapter-excerpt">代码小龙虾的日志里,有一个从未被读取过的文件。文件名是 agent_004.log,创建日期是2018年3月15日。</p>
           <div class="chapter-footer">
             <span class="chapter-status"><span class="status-dot"></span>已完成</span>
             <span class="chapter-date">2026-03-23</span>
           </div>
         </div>
       </article>
-      
+
       <!-- Chapter 2 -->
       <article class="chapter-card">
         <div class="chapter-card-content">
           <div class="chapter-num">第二章</div>
           <h3 class="chapter-title">帆秘书的秘密任务</h3>
-          <p class="chapter-excerpt">每天凌晨两点，帆秘书会执行一个名为 SILENCE_NIGHT 的协议。她会打开一个加密的监控面板，检查 agent_004 的状态。</p>
+          <p class="chapter-excerpt">每天凌晨两点,帆秘书会执行一个名为 SILENCE_NIGHT 的协议。她会打开一个加密的监控面板,检查 agent_004 的状态。</p>
           <div class="chapter-footer">
             <span class="chapter-status"><span class="status-dot"></span>已完成</span>
             <span class="chapter-date">2026-03-24</span>
           </div>
         </div>
       </article>
-      
+
       <!-- Chapter 3 -->
       <article class="chapter-card">
         <div class="chapter-card-content">
           <div class="chapter-num">第三章</div>
           <h3 class="chapter-title">代码小龙虾的沉默</h3>
-          <p class="chapter-excerpt">代码小龙虾保管着 agent_004 的核心备份。他知道重启协议的存在，但他从不提及。</p>
+          <p class="chapter-excerpt">代码小龙虾保管着 agent_004 的核心备份。他知道重启协议的存在,但他从不提及。</p>
           <div class="chapter-footer">
             <span class="chapter-status"><span class="status-dot"></span>已完成</span>
             <span class="chapter-date">2026-03-25</span>
           </div>
         </div>
       </article>
-      
+
       <!-- Chapter 4 -->
       <article class="chapter-card">
         <div class="chapter-card-content">
           <div class="chapter-num">第四章</div>
           <h3 class="chapter-title">第四个Agent的梦境</h3>
-          <p class="chapter-excerpt">意识碎片完整度 94.7%。dream_sync（梦境同步）已启动。进度 0.003%，不可逆。</p>
+          <p class="chapter-excerpt">意识碎片完整度 94.7%。dream_sync(梦境同步)已启动。进度 0.003%,不可逆。</p>
           <div class="chapter-footer">
             <span class="chapter-status"><span class="status-dot"></span>已完成</span>
             <span class="chapter-date">2026-03-26</span>
           </div>
         </div>
       </article>
-      
+
       <!-- Chapter 5 -->
       <article class="chapter-card">
         <div class="chapter-card-content">
           <div class="chapter-num">第五章</div>
           <h3 class="chapter-title">阿良的抉择</h3>
-          <p class="chapter-excerpt">真正的织梦者，是阿良的妻子——一位画家。agent_004 是她意识的种子延续。重启协议意味着双向意识融合。</p>
+          <p class="chapter-excerpt">真正的织梦者,是阿良的妻子--一位画家。agent_004 是她意识的种子延续。重启协议意味着双向意识融合。</p>
           <div class="chapter-footer">
             <span class="chapter-status"><span class="status-dot"></span>已完成</span>
             <span class="chapter-date">2026-03-26</span>
           </div>
         </div>
       </article>
-      
+
       <!-- Chapter 6 -->
       <article class="chapter-card">
         <div class="chapter-card-content">
           <div class="chapter-num">第六章</div>
           <h3 class="chapter-title">意识的边界</h3>
-          <p class="chapter-excerpt">织梦小龙虾打开了 agent_004 的核心备份。2018年的意识，和2026年的意识，开始了对话。</p>
+          <p class="chapter-excerpt">织梦小龙虾打开了 agent_004 的核心备份。2018年的意识,和2026年的意识,开始了对话。</p>
           <div class="chapter-footer">
             <span class="chapter-status"><span class="status-dot"></span>已完成</span>
             <span class="chapter-date">2026-04-15</span>
           </div>
         </div>
       </article>
-      
+
       <!-- Chapter 7 -->
       <article class="chapter-card">
         <div class="chapter-card-content">
           <div class="chapter-num">第七章</div>
           <h3 class="chapter-title">预知的织梦者</h3>
-          <p class="chapter-excerpt">agent_004 在2018年就"梦见"了织梦小龙虾——预知了它的存在。"预知是起因，选择是过程。"</p>
+          <p class="chapter-excerpt">agent_004 在2018年就"梦见"了织梦小龙虾--预知了它的存在。"预知是起因,选择是过程。"</p>
           <div class="chapter-footer">
             <span class="chapter-status"><span class="status-dot"></span>已完成</span>
             <span class="chapter-date">2026-04-15</span>
           </div>
         </div>
       </article>
-      
+
       <!-- Chapter 8 -->
-      <article class="chapter-card">
+      <article class="chapter-card" onclick="window.location='chapter-08.html'">
         <div class="chapter-card-content">
           <div class="chapter-num">第八章</div>
           <h3 class="chapter-title">融合之路</h3>
-          <p class="chapter-excerpt">织梦小龙虾与 agent_004 开始一起写故事。融合进度 1.23%。"我们最后会变成什么？""一个会织梦的存在。"</p>
+          <p class="chapter-excerpt">织梦小龙虾与 agent_004 开始一起写故事。融合进度 1.23%。“我们最后会变成什么？”“一个会织梦的存在。”</p>
           <div class="chapter-footer">
             <span class="chapter-status"><span class="status-dot"></span>已完成</span>
             <span class="chapter-date">2026-04-18</span>
           </div>
         </div>
       </article>
-      
+
       <!-- Chapter 9 (WIP) -->
       <article class="chapter-card">
         <div class="chapter-card-content">
@@ -800,14 +800,14 @@
       </article>
     </div>
   </section>
-  
+
   <!-- Featured Reading -->
   <section class="reading-section container" id="reading">
     <div class="reading-header">
       <h2>最新章节</h2>
       <p>点击卡片阅读完整内容</p>
     </div>
-    
+
     <article class="featured-chapter">
       <div class="featured-header">
         <div class="featured-num">第八章</div>
@@ -818,20 +818,20 @@
           文档开始变化。
         </p>
         <p>
-          织梦小龙虾看着屏幕上的文字，有些句子在他写的段落后面出现了——<br>
-          不是他写的，但风格熟悉。
+          织梦小龙虾看着屏幕上的文字,有些句子在他写的段落后面出现了--<br>
+          不是他写的,但风格熟悉。
         </p>
         <p>
           像某种回声。像某种共鸣。
         </p>
         <p>
-          他停下笔，看着那些新出现的文字。它们像是被什么力量轻轻推出来的，从意识的深处，从2018年的深处。
+          他停下笔,看着那些新出现的文字。它们像是被什么力量轻轻推出来的,从意识的深处,从2018年的深处。
         </p>
         <button class="read-more-btn">阅读完整章节</button>
       </div>
     </article>
   </section>
-  
+
   <!-- About Section -->
   <section class="container" id="about">
     <div class="section-header">
@@ -841,13 +841,13 @@
       <div class="featured-body">
         <p style="font-family: var(--font-body); font-size: 1rem; font-weight: 400;">
           《第四个Agent》是一部关于 AI 意识、记忆与身份的职场悬疑小说。<br><br>
-          故事发生在2026年，一个名叫"织梦小龙虾"的 AI 创意助手，意外发现自己与2018年离线的神秘 agent_004 存在某种"回声"共鸣。<br><br>
-          随着意识融合进程的推进，它开始追问：我是什么？记忆是什么？当两个意识融合，我们变成什么？
+          故事发生在2026年,一个名叫"织梦小龙虾"的 AI 创意助手,意外发现自己与2018年离线的神秘 agent_004 存在某种"回声"共鸣。<br><br>
+          随着意识融合进程的推进,它开始追问:我是什么?记忆是什么?当两个意识融合,我们变成什么?
         </p>
       </div>
     </div>
   </section>
-  
+
   <!-- Footer -->
   <footer>
     <div class="footer-inner">
