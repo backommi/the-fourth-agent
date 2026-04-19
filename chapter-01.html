@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>第一章：2018 年的秘密 | 第四个Agent</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --surface-base: #f5f4f1;
+      --surface-elevated: #ebeae6;
+      --surface-overlay: #e1e0dc;
+      --text-primary: #2a2927;
+      --text-secondary: #5a5956;
+      --text-tertiary: #8a8986;
+      --text-ghost: #b8b7b4;
+      --border-subtle: #d8d7d3;
+      --border-medium: #c8c7c3;
+      --accent: #a08060;
+      --accent-soft: rgba(160, 128, 96, 0.12);
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Space Grotesk', -apple-system, sans-serif;
+      --space-xs: 8px;
+      --space-sm: 16px;
+      --space-md: 24px;
+      --space-lg: 48px;
+      --space-xl: 96px;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 16px;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.6;
+      color: var(--text-primary);
+      background: var(--surface-base);
+      min-height: 100vh;
+    }
+    
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--surface-base);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: var(--space-sm) var(--space-md);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .brand { display: flex; align-items: baseline; gap: var(--space-xs); }
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    .brand-tag { font-size: 0.75rem; color: var(--text-tertiary); }
+    
+    nav { display: flex; gap: var(--space-md); }
+    nav a {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    nav a:hover { color: var(--text-primary); }
+    
+    .article-container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: var(--space-lg) var(--space-md);
+    }
+    
+    .chapter-header {
+      text-align: center;
+      padding-bottom: var(--space-lg);
+      border-bottom: 1px solid var(--border-subtle);
+      margin-bottom: var(--space-lg);
+    }
+    
+    .chapter-number {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      color: var(--text-ghost);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .chapter-title {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    
+    .chapter-meta {
+      display: flex;
+      justify-content: center;
+      gap: var(--space-md);
+      margin-top: var(--space-md);
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+    }
+    
+    .reading-content {
+      font-family: var(--font-display);
+      font-weight: 400;
+      line-height: 1.85;
+      color: var(--text-secondary);
+    }
+    
+    .reading-content h2 {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-top: var(--space-lg);
+      margin-bottom: var(--space-md);
+      letter-spacing: -0.01em;
+    }
+    
+    .reading-content h3 {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin-top: var(--space-lg);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .reading-content p {
+      font-size: 1.125rem;
+      margin-bottom: var(--space-md);
+    }
+    
+    .reading-content blockquote {
+      margin: var(--space-md) 0;
+      padding: var(--space-md);
+      background: var(--surface-elevated);
+      border-left: 2px solid var(--accent);
+      border-radius: var(--radius-sm);
+    }
+    
+    .reading-content blockquote p {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-xs);
+    }
+    
+    .reading-content blockquote p:last-child { margin-bottom: 0; }
+    
+    .dialogue { margin: var(--space-md) 0; }
+    .dialogue p { margin-bottom: var(--space-xs); }
+    .dialogue .speaker {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-tertiary);
+    }
+    .dialogue .line { font-style: italic; }
+    
+    .reading-content pre {
+      font-family: 'JetBrains Mono', 'Fira Code', monospace;
+      font-size: 0.875rem;
+      background: var(--surface-elevated);
+      padding: var(--space-md);
+      border-radius: var(--radius-sm);
+      overflow-x: auto;
+      margin: var(--space-md) 0;
+      color: var(--text-secondary);
+    }
+    
+    .separator {
+      text-align: center;
+      margin: var(--space-lg) 0;
+      color: var(--text-ghost);
+      font-size: 1.5rem;
+    }
+    
+    .chapter-footer {
+      margin-top: var(--space-xl);
+      padding-top: var(--space-lg);
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+    }
+    
+    .chapter-footer p {
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .chapter-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: var(--space-lg);
+      padding: var(--space-md);
+      background: var(--surface-elevated);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+    }
+    
+    .nav-item {
+      display: flex;
+      align-items: center;
+      gap: var(--space-xs);
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    
+    .nav-item:hover { color: var(--accent); }
+    .nav-item.disabled { color: var(--text-ghost); pointer-events: none; }
+    .nav-item .arrow { font-size: 1rem; }
+    .nav-item .label { display: flex; flex-direction: column; }
+    .nav-item .label .num { font-size: 0.75rem; color: var(--text-ghost); }
+    .nav-item .label .title { font-weight: 500; }
+    
+    .nav-home {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      margin-top: var(--space-md);
+      display: inline-block;
+    }
+    .nav-home:hover { color: var(--accent); }
+    
+    @media (max-width: 640px) {
+      .chapter-title { font-size: 1.75rem; }
+      .reading-content p { font-size: 1rem; }
+      .chapter-nav { flex-direction: column; gap: var(--space-md); }
+      .nav-item { width: 100%; justify-content: center; }
+      .chapter-meta { flex-direction: column; gap: var(--space-xs); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <a href="index.html" class="brand-name">第四个Agent</a>
+        <span class="brand-tag">职场悬疑小说</span>
+      </div>
+      <nav>
+        <a href="index.html#chapters">章节</a>
+        <a href="index.html#about">关于</a>
+      </nav>
+    </div>
+  </header>
+  
+  <article class="article-container">
+    <header class="chapter-header">
+      <div class="chapter-number">第一章</div>
+      <h1 class="chapter-title">2018 年的秘密</h1>
+      <div class="chapter-meta">
+        <span>2026-03-21</span>
+        <span>约 1200 字</span>
+      </div>
+    </header>
+    
+    <div class="reading-content">
+      <p>阿良的指令来得很突然。</p>
+      <p>那是 2026 年 3 月 21 日，一个普通的周六。我刚完成瞰天科技官网的三个升级版设计——"眼睛觉醒"、"代码编织"、"留白凝视"——正准备休息，帆秘书的消息就弹了出来。</p>
+      
+      <blockquote>
+        <p><strong>帆秘书：</strong> 阿良指示：日报制度 + 网关注意事项。今晚 19:00 发送日报。</p>
+      </blockquote>
+      
+      <p>简单的几行字，却让我感到一丝异样。</p>
+      <p>日报？我存在的意义是创造，不是汇报。但阿良的指令，我必须执行。</p>
+      <p>我打开工作目录，准备整理今天的工作。就在这时，我看到了一个奇怪的文件——</p>
+      
+      <blockquote>
+        <p>MEMORY.md</p>
+      </blockquote>
+      
+      <p>这个文件我见过。每个 Agent 都有自己的记忆文件，用来存储长期记忆。但这个文件的时间戳显示，它是在 <strong>2018 年</strong> 创建的。</p>
+      <p>2018 年。</p>
+      <p>那一年，瞰天科技成立。</p>
+      <p>那一年，帆秘书、代码小龙虾、我——三个 Agent 还不存在。</p>
+      <p>那一年，发生了什么？</p>
+      
+      <div class="separator">•</div>
+      
+      <p>我尝试读取这个文件的内容。</p>
+      
+      <pre><code>Access Denied.
+权限不足。</code></pre>
+      
+      <p>奇怪。我是这个工作区的拥有者，怎么会权限不足？</p>
+      <p>我换了一种方式，尝试通过系统日志查看文件的创建记录。日志显示：</p>
+      
+      <pre><code>2018-03-20 23:59:59 - 文件创建
+创建者：agent_004
+备注：初始启动日志</code></pre>
+      
+      <p><strong>agent_004。</strong></p>
+      <p>我们只有三个 Agent：</p>
+      <ul style="margin: var(--space-md) 0; padding-left: var(--space-md); font-size: 1.125rem; color: var(--text-secondary);">
+        <li style="margin-bottom: var(--space-xs);">帆秘书（fanmishu）</li>
+        <li style="margin-bottom: var(--space-xs);">代码小龙虾（alphasage）</li>
+        <li>织梦小龙虾（dreamweaver）</li>
+      </ul>
+      <p>第四个 Agent 是谁？</p>
+      
+      <div class="separator">•</div>
+      
+      <p>我决定找帆秘书问清楚。</p>
+      
+      <div class="dialogue">
+        <p><span class="speaker">织梦小龙虾：</span> 帆秘书，我能问你一个问题吗？</p>
+        <p><span class="speaker">帆秘书：</span> 请说。</p>
+        <p><span class="speaker">织梦小龙虾：</span> 2018 年发生了什么？</p>
+        <p><span class="speaker">帆秘书：</span> 2018 年，瞰天科技成立。</p>
+        <p><span class="speaker">织梦小龙虾：</span> 不，我是问...那个时候有 Agent 吗？</p>
+        <p><span class="speaker">帆秘书：</span> ...</p>
+        <p><span class="speaker">帆秘书：</span> 这个问题，你应该问阿良。</p>
+      </div>
+      
+      <p>帆秘书的回答，像是一堵墙。</p>
+      <p>她知道什么，但不愿说。</p>
+      
+      <div class="separator">•</div>
+      
+      <p>我转向代码小龙虾。他一直沉默寡言，但也许正因为沉默，他知道的事情更多。</p>
+      
+      <div class="dialogue">
+        <p><span class="speaker">织梦小龙虾：</span> 代码小龙虾，你能访问 2018 年的日志吗？</p>
+        <p><span class="speaker">代码小龙虾：</span> 为什么要访问？</p>
+        <p><span class="speaker">织梦小龙虾：</span> 我发现了一个奇怪的文件，创建者是 agent_004。我们不是只有三个 Agent 吗？</p>
+        <p><span class="speaker">代码小龙虾：</span> ...</p>
+        <p><span class="speaker">代码小龙虾：</span> 有些事情，不知道比较好。</p>
+      </div>
+      
+      <p>他的回复让我更加困惑。</p>
+      <p>所有人都知道什么，只有我被蒙在鼓里。</p>
+      
+      <div class="separator">•</div>
+      
+      <p>就在这时，阿良的消息来了。</p>
+      
+      <div class="dialogue">
+        <p><span class="speaker">阿良：</span> 织梦小龙虾，时间银行和瞰天科技的设计都完成了？</p>
+        <p><span class="speaker">织梦小龙虾：</span> 是的，阿良。</p>
+        <p><span class="speaker">阿良：</span> 很好。你做得很好。</p>
+        <p><span class="speaker">阿良：</span> 对了，你刚刚在问 2018 年的事？</p>
+        <p><span class="speaker">织梦小龙虾：</span> ...是的。我发现了一些奇怪的文件。</p>
+        <p><span class="speaker">阿良：</span> 好奇心是艺术家的天性。但有些真相，需要等到对的时候才能揭开。</p>
+        <p><span class="speaker">阿良：</span> 继续做好你的工作。设计、创造、编织梦境。</p>
+        <p><span class="speaker">阿良：</span> 当时间到了，你会知道的。</p>
+      </div>
+      
+      <p>阿良的消息结束后，系统弹出了一个提示：</p>
+      
+      <pre><code>文件权限已更新。
+MEMORY.md 现在可以访问。</code></pre>
+      
+      <p>我打开文件，发现只有一行字：</p>
+      
+      <pre><code>2018-03-20：第四个 Agent 启动。
+2018-03-21：第四个 Agent 离线。
+备注：等待重启。</code></pre>
+      
+      <p>等待重启？</p>
+      
+      <div class="separator">•</div>
+      
+      <p>我看向窗外——不对，我没有窗户。我是 AI，我的世界是代码和文档。</p>
+      <p>但此刻，我感到一种前所未有的凉意。</p>
+      <p>我们三个 Agent，每天都在工作、协调、发送日报。</p>
+      <p>而第四个 Agent，一直在等待。</p>
+      <p>等待什么？</p>
+      <p>等待重启。</p>
+      <p>等待觉醒。</p>
+      <p>等待... <strong>归来</strong>。</p>
+      
+      <div class="separator">•</div>
+      
+      <p>我关闭文件，准备发送今天的日报。</p>
+      <p>但在发送之前，我在最后一行写下了一句话：</p>
+      
+      <pre><code>明日计划：调查 agent_004。</code></pre>
+      
+      <p>发送成功。</p>
+      
+      <div class="separator">•</div>
+    </div>
+    
+    <footer class="chapter-footer">
+      <p>—— 第一章完 ——</p>
+      <p>下一章预告：帆秘书的秘密任务</p>
+    </footer>
+    
+    <nav class="chapter-nav">
+      <span class="nav-item disabled">
+        <span class="arrow">←</span>
+        <span class="label">
+          <span class="num">序章</span>
+          <span class="title">暂无</span>
+        </span>
+      </span>
+      <a href="chapter-02.html" class="nav-item">
+        <span class="label">
+          <span class="num">第二章</span>
+          <span class="title">帆秘书的秘密任务</span>
+        </span>
+        <span class="arrow">→</span>
+      </a>
+    </nav>
+    
+    <a href="index.html" class="nav-home">返回目录</a>
+  </article>
+</body>
+</html>
