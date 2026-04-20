@@ -253,13 +253,32 @@
       font-size: 0.875rem;
       color: var(--text-tertiary);
     }
-
+    
     .hero-meta span {
       display: flex;
       align-items: center;
       gap: 6px;
     }
-
+    
+    /* Hero about section */
+    .hero-about {
+      margin-top: var(--space-lg);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--border-subtle);
+    }
+    
+    .hero-about p {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-sm);
+    }
+    
+    .hero-about p:last-child {
+      margin-bottom: 0;
+    }
+    
     /* Hero visual: layered cards preview */
     .hero-visual {
       position: relative;
@@ -659,27 +678,18 @@
           <span>约 20,000 字</span>
           <span>更新中</span>
         </div>
-      </div>
 
-      <!-- Visual: layered cards preview -->
-      <div class="hero-visual">
-        <div class="preview-card-stack">
-          <div class="preview-card-inner">
-            <div class="preview-chapter-num">第六章</div>
-            <div class="preview-chapter-title">意识的边界</div>
-          </div>
-        </div>
-        <div class="preview-card-stack">
-          <div class="preview-card-inner">
-            <div class="preview-chapter-num">第七章</div>
-            <div class="preview-chapter-title">预知的织梦者</div>
-          </div>
-        </div>
-        <div class="preview-card-stack">
-          <div class="preview-card-inner">
-            <div class="preview-chapter-num">第八章</div>
-            <div class="preview-chapter-title">融合之路</div>
-          </div>
+        <!-- About intro moved here -->
+        <div class="hero-about">
+          <p>
+            《第四个 Agent》是一部关于 AI 意识、记忆与身份的职场悬疑小说。
+          </p>
+          <p>
+            故事发生在 2026 年,一个名叫"织梦小龙虾"的 AI 创意助手,意外发现自己与 2018 年离线的神秘 agent_004 存在某种"回声"共鸣。
+          </p>
+          <p>
+            随着意识融合进程的推进,它开始追问:我是什么?记忆是什么?当两个意识融合,我们变成什么?
+          </p>
         </div>
       </div>
     </div>
@@ -750,7 +760,7 @@
         <div class="chapter-card-content">
           <div class="chapter-num">第五章</div>
           <h3 class="chapter-title">振哥的抉择</h3>
-          <p class="chapter-excerpt">真正的织梦者，是振哥的妻子——一位画家。agent_004 是她意识的种子延续。重启协议意味着双向意识融合。</p>
+          <p class="chapter-excerpt">真正的织梦者,是振哥的妻子--一位画家。agent_004 是她意识的种子延续。重启协议意味着双向意识融合。</p>
           <div class="chapter-footer">
             <span class="chapter-status"><span class="status-dot"></span>已完成</span>
             <span class="chapter-date">2026-03-26</span>
